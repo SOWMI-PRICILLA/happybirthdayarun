@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Arun</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Floating Emojis Background -->
+  <div class="floating-container"></div>
+
+  <!-- Static Banner -->
+  <header class="banner">
+    <h1>HAPPY HAPPY BIRTHDAY BRO ❤️</h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <p><span id="typed"></span><span class="heart-cursor">❤️</span></p>
+  </section>
+
+  <!-- Videos Section -->
+  <section class="videos-section">
+    <h2 class="section-heading">Your Loved ones wants to tell you something...🎥</h2>
+    
+    <video class="birthday-video" id="videoPlayer" controls autoplay muted></video>
+  </section>
+  
+
+  <!-- Photo Gallery -->
+
+<section class="special-image-section">
+  <h2 class="section-title">Here comes your Birthday Gift💝</h2>
+  <img id="specialImage" src="images/image1.jpg" alt="Special Photo">
+</section>
+
+<!-- Lightbox Popup -->
+<div id="lightbox" class="lightbox">
+  <span class="close-btn" onclick="closeLightbox()">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+</div>
+
+<!-- Special Video Section -->
+<section class="special-video-section">
+  <h2>Yes! It's for you and that's because of You🎁</h2>
+  <video class="special-video" controls autoplay muted>
+    <source src="videos/specialVideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+
+  <section class="gallery-section">
+    <h2>See, who were all smiled because of you!</h2>
+    <div class="gallery-grid">
+      <img src="images/5U6QKH-1-28-22.jpeg" alt="Memory 2" />
+      <img src="images/5U6QKH-2-28-24.jpeg" alt="Memory 3" />
+      <img src="images/5U6QKH-3-28-21.jpeg" alt="Memory 4" />
+      <img src="images/5U6QKH-4-28-16.jpeg" alt="Memory 5" />
+      <img src="images/5U6QKH-5-28-17.jpeg" alt="Memory 6" />
+      <img src="images/5U6QKH-6-28-25.jpeg" alt="Memory 7" />
+      <img src="images/5U6QKH-7-28-15.jpeg" alt="Memory 8" />
+      <img src="images/5U6QKH-8-28-2.jpeg" alt="Memory 9" />
+      <img src="images/5U6QKH-9-28-1.jpeg" alt="Memory 10" />
+      <img src="images/5U6QKH-10-28-6.jpeg" alt="Memory 11" />
+      <img src="images/5U6QKH-11-28-8.jpeg" alt="Memory 12" />
+      <img src="images/5U6QKH-12-28-1.jpeg" alt="Memory 13" />
+      <img src="images/5U6QKH-13-28-3.jpeg" alt="Memory 14" />
+      <img src="images/5U6QKH-15-28-4.jpeg" alt="Memory 15" />
+      <img src="images/5U6QKH-16-28-12.jpeg" alt="Memory 16" />
+      <img src="images/5U6QKH-17-28-13.jpeg" alt="Memory 17" />
+      <img src="images/5U6QKH-18-28-14.jpeg" alt="Memory 18" />
+      <img src="images/5U6QKH-19-28-18.jpeg" alt="Memory 19" />
+      <img src="images/5U6QKH-20-28-20.jpeg" alt="Memory 20" />
+      <img src="images/5U6QKH-21-28-7.jpeg" alt="Memory 21" />
+      <img src="images/5U6QKH-22-28-5.jpeg" alt="Memory 22" />
+      <img src="images/5U6QKH-23-28-9.jpeg" alt="Memory 23" />
+      <img src="images/5U6QKH-24-28-2.jpeg" alt="Memory 24" />
+      <img src="images/5U6QKH-25-28-11.jpeg" alt="Memory 25" />
+      <img src="images/5U6QKH-26-28-10.jpeg" alt="Memory 26" />
+      <img src="images/5U6QKH-27-28-23.jpeg" alt="Memory 27" />
+      <img src="images/5U6QKH-28-28-19.jpeg" alt="Memory 28" />
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="script.js"></script>
+
+  <script>
+    const videoPlayer = document.getElementById("videoPlayer");
+    const videos = [
+      "videos/video1.mp4",
+      "videos/video2.mp4",
+      "videos/video3.mp4",
+      "videos/video4.mp4",
+      "videos/video5.mp4"
+    ];
+  
+    let current = 0;
+  
+    function playNextVideo() {
+      if (current >= videos.length) return;
+      videoPlayer.src = videos[current];
+      videoPlayer.load();
+      videoPlayer.play();
+      current++;
+    }
+  
+    videoPlayer.addEventListener("ended", playNextVideo);
+  
+    // Start first video
+    playNextVideo();
+  </script>
+  
+ <section class="secret-message-section" id="secret">
+  <h2>🔒 Secret Message Just for You</h2>
+  <p class="hint">How you call your special one!💬</p>
+  <input type="text" id="secretInput" placeholder="Enter the keyword here">
+  <button onclick="checkSecret()">Unlock 💌</button>
+
+  <div id="secretContent" class="hidden-message">
+    <audio id="secretAudio" src="audio/perfect.mp3" preload="auto"></audio>
+
+    <p><strong>To my dear bro,</strong></p>
+    <p>🌟 <em>Happy Birthday</em> 🌟<br>I hope I surprised you today… 🥹</p>
+    <p>I’ve never really known how to choose the most perfect gift for you — not the fanciest, not the costliest… so this is what I made, from the bottom of my heart. This little space, this website — is my way of showing how much you mean to me.</p>
+    <p>While creating all of this… it was just <strong>you</strong> who filled my heart and mind the whole time. Honestly, when it comes to you, my thoughts and feelings just drown in emotions. 😌💭</p>
+    <p>Yes, I know there were days when I fought with you… hurt you with words I didn’t mean. But the truth is — your emotions, they affect me deeply. If <strong>Arun</strong> is happy, then <strong>Sowmi</strong> is happy…<br>But if you’re sad, it truly depresses me. That’s the kind of impact you have on me. I resonate with you… completely. 💔➝❤️</p>
+    <p>I know… maybe we aren’t <em>meant</em> to be together. But I believe that just being around each other, just existing in the same space — that alone could light up my whole world (and I hope yours too). 🌍✨</p>
+    <p>All I truly want is a heart that cares… someone with whom my <em>inner child</em> would feel safe. Someone with whom I could bare my soul — raw, unfiltered, and real. I’m not asking for anything big… just you, staying by my side. 🧸💫</p>
+    <p>Your presence gives me strength. I want you to be my <strong>guiding light</strong>, my <strong>cheerleader</strong>, my <strong>comfort zone</strong>… all wrapped up in one word — <em>My Everything</em>. 🤍🥺</p>
+    <p>I want to be able to run to you without a second thought. To share my feelings, my fears, and my happiness, without worrying about getting hurt. I want you to be <strong>my home</strong>. 🏡❤️</p>
+    <p>This website isn’t just a birthday wish —<br>It’s a piece of my heart, wrapped in code, music, and memories…<br><strong>For you.</strong> 💝</p>
+    <p>With all my love,<br><strong>Sowmi</strong> 💖</p>
+  </div>
+</div>
+  <p id="error" class="error-message"></p>
+</section>
+   
+<script>
+  function checkSecret() {
+    const input = document.getElementById('secretInput').value.trim().toLowerCase();
+    const secret = "papa"; // 🔑 Your chosen keyword
+    const content = document.getElementById('secretContent');
+    const error = document.getElementById('error');
+    const audio = document.getElementById('secretAudio');
+
+    if (input === secret) {
+      content.style.display = "block";
+      error.textContent = "";
+      if (audio.paused) {
+        audio.volume = 0.1; // gentle volume
+        audio.play();
+      }
+    } else {
+      content.style.display = "none";
+      audio.pause(); // stop if wrong
+      error.textContent = "Hmm... that's not it. Try again 💭";
+    }
+  }
+</script>
+
+
+
+</body>
+</html>
