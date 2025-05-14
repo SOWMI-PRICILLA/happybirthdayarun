@@ -1,5 +1,18 @@
 // Typed.js setup
 window.onload = function () {
+
+  const heroAudio = document.getElementById("heroAudio");
+
+  // Gently play audio with low volume
+  function playHeroAudio() {
+    heroAudio.volume = 0.2; // soft background
+    heroAudio.play().catch((err) => {
+      console.log("Autoplay may be blocked by the browser:", err);
+    });
+  }
+
+
+  
   new Typed("#typed", {
     strings: [
       `Some souls carry storms, yet shine like sunlight. 💫<br>
@@ -16,6 +29,7 @@ window.onload = function () {
     ],
     typeSpeed: 50,
     showCursor: false,
+    onBegin: playHeroAudio
   });
 };
 

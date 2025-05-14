@@ -23,11 +23,15 @@
   </section>
 
   <!-- Videos Section -->
-  <section class="videos-section">
-    <h2 class="section-heading">Your Loved ones wants to tell you something...🎥</h2>
-    
-    <video class="birthday-video" id="videoPlayer" controls autoplay muted></video>
-  </section>
+<section class="videos-section">
+  <h2 class="section-heading">Your Loved ones want to tell you something...🎥</h2>
+  
+  <video class="birthday-video" id="videoPlayer" controls playsinline preload="none">
+    <source src="video1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+
   
 
   <!-- Photo Gallery -->
@@ -46,7 +50,7 @@
 <!-- Special Video Section -->
 <section class="special-video-section">
   <h2>Yes! It's for you and that's because of You🎁</h2>
-  <video class="special-video" controls autoplay muted>
+  <video class="special-video" controls >
     <source src="videos/specialVideo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -163,7 +167,28 @@
   }
 </script>
 
+<script>
+  const video = document.getElementById('videoPlayer');
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  }, {
+    threshold: 1.0 // Play when 50% visible
+  });
+
+  observer.observe(video);
+</script>
+
+<audio id="heroAudio" preload="auto">
+  <source src="audio/kutty.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
 </body>
 </html>
